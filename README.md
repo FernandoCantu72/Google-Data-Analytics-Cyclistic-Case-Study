@@ -28,6 +28,7 @@ The twelve files downloaded were: <br>
 >•	R Studio was used to analyze the data by establishing a link between SQL server and R. <br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	Queries were run to identify the bike preference of both casual riders and annual members and findings plotted in a pie chart. <br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	Queries were run to identify the different usage by rider type and by day of the week and the results plotted in a bar chart. <br>
+
 >•	MS SQL and Python were used to create a map. <br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	Query was run in MS SQL to identify the top twenty stations used by Members and the top twenty stations used by Casual riders. <br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	Python was used to generate a map that plots the findings.
