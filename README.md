@@ -35,6 +35,11 @@ The twelve files downloaded were: <br>
 ### 5.	(Share) Supporting visualizations and key findings  
 >•	To visualize the findings a ESRI Story Map was used to showcase the results here: [<ins>Case Study</ins>](https://arcg.is/1mH4KW0)
 
+### 6.	Your top three recommendations based on your analysis 
+>•	Expand Electric Bike Availability: Increasing the number of electric bikes, especially in the Bay Area and at the top 20 stations with the highest rental activity would make membership more appealing and convenient for >frequent users. <br>
+>•	Introduce Flexible Pass Options: Offering monthly or seasonal passes at price points between single-ride and annual memberships would give casual riders a gradual, cost-effective path toward full membership. <br>
+>•	Launch a Referral Program: Creating a referral incentive program for groups, families, or friends could motivate current riders to upgrade from short-term passes to annual memberships while attracting new users through >word-of-mouth. <br>
+
 
 
 ## 🎯 Conclusion
