@@ -32,7 +32,7 @@ The twelve files downloaded were: <br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	Query was run in MS SQL to identify the top twenty stations used by Members and the top twenty stations used by Casual riders. <br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	Python was used to generate a map that plots the findings.
 
-### 5.	Supporting visualizations and key findings  
+### 5.	(Share) Supporting visualizations and key findings  
 >•	To visualize the findings a ESRI Story Map was used to showcase the results here: [<ins>Case Study</ins>](https://arcg.is/1mH4KW0)
 
 
