@@ -34,9 +34,9 @@ The twelve files downloaded were: <br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	Python was used to generate a map that plots the findings.
 
 ### 5.	(Share) Supporting visualizations and key findings  
->•	To visualize the findings an ESRI Story Map was used to showcase the results here: [<ins>Case Study</ins>](https://arcg.is/1mH4KW0)
+>•	To visualize the findings, an ESRI Story Map was used to showcase the results: [<ins>Case Study</ins>](https://arcg.is/1mH4KW0)
 
-### 6.	Your top three recommendations based on your analysis 
+### 6.	(Act) Top three recommendations based on data analysis results
 >•	Expand Electric Bike Availability: Increasing the number of electric bikes, especially in the Bay Area and at the top 20 stations with the highest rental activity would make membership more appealing and convenient for >frequent users. <br>
 
 >•	Introduce Flexible Pass Options: Offering monthly or seasonal passes at price points between single-ride and annual memberships would give casual riders a gradual, cost-effective path toward full membership. <br>
