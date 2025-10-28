@@ -26,7 +26,7 @@ The twelve files downloaded were: <br>
 
 ### 4.	(Analyze) A summary of analysis  
 >•	R Studio was used to analyze the data by establishing a link between SQL server and R. <br>
->&nbsp;&nbsp;&nbsp;&nbsp; o	Queries were run to identify the bike preference of both casual riders and annual members and findings plotted in a pie chart. <br>
+>&nbsp;&nbsp;&nbsp;&nbsp; o	Queries were run to identify the bike preference of both casual riders and annual members and findings plotted in a pie chart. https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/Rider_Preferences_SideBySide.html<br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	Queries were run to identify the different usage by rider type and by day of the week and the results plotted in a bar chart. <br>
 
 >•	MS SQL and Python were used to create a map. <br>
