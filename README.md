@@ -20,7 +20,7 @@ The twelve files downloaded were: <br>
 [Note that the data has been made available by Motivate International Inc. under this [<ins>license</ins>](https://www.divvybikes.com/data-license-agreement).]
 ### 3.	(Process) Documentation of any cleaning or manipulation of data 
 >•	Data was downloaded, manipulated, and cleaned using Microsoft Excel.<br>
->&nbsp;&nbsp;&nbsp;&nbsp;o	Calculations were made to add two columns to the data sets<br>
+>&nbsp;&nbsp;&nbsp;&nbsp;o	Calculations were performed to add two columns—ride_length and day_of_week—to the datasets: &nbsp;&nbsp;[csv file](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/202411-divvy-tripdata-csv.png)<br>
 >&nbsp;&nbsp;&nbsp;&nbsp;o	Only one file, 202411-divvy-tripdata.zip, had corrupt data and 600 records were deleted from the file.<br>
 >•	 Files were uploaded to Microsoft SQL Server and combined into one Table with a total of 5M records.<br>
 
