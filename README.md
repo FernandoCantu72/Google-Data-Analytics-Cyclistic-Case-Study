@@ -22,7 +22,7 @@ The twelve files downloaded were: <br>
 ### 3.	(Process) Documentation of any cleaning or manipulation of data <br>
 >•	Data was downloaded, manipulated, and cleaned using Microsoft Excel.<br>
 >&nbsp;&nbsp;&nbsp;&nbsp;o	Calculations were performed to add two columns—ride_length and day_of_week—to the datasets: &nbsp;&nbsp;[csv file](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/202411-divvy-tripdata-csv.png)<br>
->&nbsp;&nbsp;&nbsp;&nbsp;o	Only one file, 202411-divvy-tripdata.zip, contained corrupt data, and 43 records were removed: &nbsp;&nbsp;[error file](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/202411-divvy-tripdata-error-file.png)<br>
+>&nbsp;&nbsp;&nbsp;&nbsp;o	Only one file, 202411-divvy-tripdata.zip, contained [corrupt data](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/202411-divvy-tripdata-error-file.png), and 43 records were removed: <br>
 
 >•	 A database named Cycling was created using Microsoft SQL Serve.<br>
 >&nbsp;&nbsp;&nbsp;&nbsp;o Twelve csv files were combined into the [dbo.tripdata](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/Create_BulkInsert_tripdata_table.sql
