@@ -22,8 +22,9 @@ The twelve files downloaded were: <br>
 >•	Data was downloaded, manipulated, and cleaned using Microsoft Excel.<br>
 >&nbsp;&nbsp;&nbsp;&nbsp;o	Calculations were performed to add two columns—ride_length and day_of_week—to the datasets: &nbsp;&nbsp;[csv file](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/202411-divvy-tripdata-csv.png)<br>
 >&nbsp;&nbsp;&nbsp;&nbsp;o	Only one file, 202411-divvy-tripdata.zip, contained corrupt data, and 43 records were removed: &nbsp;&nbsp;[error file](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/202411-divvy-tripdata-error-file.png)<br>
->•	 Files were uploaded to Microsoft SQL Server and combined into one Table with a total of 5M records.<br>
-
+>•	 A created database named Cycling using Microsoft SQL Serve.;<br>
+>•	 Files were uploaded to Microsoft SQL Server and combined into the dbo.tripdata table with a total of 5,539,478 records.&nbsp;&nbsp;[SQL Code](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/Create_BulkInsert_tripdata_table.sql
+)<br>
 ### 4.	(Analyze) A summary of analysis  
 >•	R Studio was used to establishing a link between SQL server and R, query SQL, analyse data, and create graphs. <br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	Queries were run to identify the bike preference of both casual riders and annual members.<br>
