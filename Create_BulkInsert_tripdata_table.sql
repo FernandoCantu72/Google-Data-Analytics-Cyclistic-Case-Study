@@ -3,6 +3,8 @@
    - Adjust: @Folder, @ErrorDir, file name pattern, and table schema if needed
    - Requires the CSVs to be extracted locally on the SQL Server machine
    ================================================ */
+CREATE DATABASE Cycling;
+GO
 
 USE [Cycling];  
 GO
