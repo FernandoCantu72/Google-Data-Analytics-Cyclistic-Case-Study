@@ -35,7 +35,7 @@ The twelve files downloaded were: <br>
 
 >•	MS SQL and Python were used to create a map. <br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	Query was run in MS SQL to identify the top twenty stations used by Members and the top twenty stations used by Casual riders. <br>
->&nbsp;&nbsp;&nbsp;&nbsp; o	Python was used to generate a map that plots the findings.  [Python Code](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/PythonMap_Top_20_Stations.html)[Python Map](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/divvy_top20_openstreetmap_lake_shore.html)
+>&nbsp;&nbsp;&nbsp;&nbsp; o	Python was used to generate a map that plots the findings.  [Python Code](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/PythonMap_Top_20_Stations.html)     [Python Map](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/divvy_top20_openstreetmap_lake_shore.html)
 
 ### 5.	(Share) Supporting visualizations and key findings  
 >•	To visualize the findings, an ESRI Story Map was used to showcase the results: [<ins>Case Study</ins>](https://arcg.is/1mH4KW0)
