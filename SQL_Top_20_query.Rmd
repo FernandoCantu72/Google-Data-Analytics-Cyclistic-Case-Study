@@ -1,0 +1,82 @@
+---
+title: "SQL_top_20_query"
+author: "Fernando Cantu"
+date: "2025-10-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Step‑by‑Step Guide
+
+This guide shows you how to go from **SQL Server** to an **interactive street map of Chicago** (with Lake Michigan label) using **Python + Folium**. It includes:
+- the exact **SQL query**,
+- the **Python script** (produces the HTML map with the same red/blue teardrop 🚲 markers, title, legend, and labels).
+
+---
+
+## 1) Run the SQL in SQL Server
+
+Use SSMS (or any SQL tool) to run the following query against your `Cycling.dbo.tripdata` table:
+
+```sql
+WITH cleaned AS (
+    SELECT
+        LTRIM(RTRIM(start_station_name)) AS start_station_name,
+        LOWER(LTRIM(RTRIM(member_casual))) AS mc
+    FROM [Cycling].[dbo].[tripdata]
+    WHERE start_station_name IS NOT NULL
+),
+station_counts AS (
+    SELECT
+        start_station_name,
+        mc,
+        COUNT_BIG(*) AS rides
+    FROM cleaned
+    GROUP BY start_station_name, mc
+),
+ranked AS (
+    SELECT
+        mc,
+        start_station_name,
+        rides,
+        ROW_NUMBER() OVER (
+            PARTITION BY mc
+            ORDER BY rides DESC, start_station_name ASC
+        ) AS rn
+    FROM station_counts
+),
+stations AS (
+    SELECT
+        LTRIM(RTRIM(start_station_name)) AS start_station_name,
+        AVG(CAST(start_lat AS float)) AS start_lat,
+        AVG(CAST(start_lng AS float)) AS start_lng
+    FROM [Cycling].[dbo].[tripdata]
+    WHERE start_station_name IS NOT NULL
+      AND start_lat IS NOT NULL
+      AND start_lng IS NOT NULL
+    GROUP BY LTRIM(RTRIM(start_station_name))
+)
+SELECT
+    CASE WHEN r.mc = 'member' THEN 'member'
+         WHEN r.mc = 'casual' THEN 'casual'
+         ELSE r.mc END AS bucket,
+    r.rn AS rank_order,
+    r.start_station_name,
+    s.start_lat,
+    s.start_lng
+FROM ranked AS r
+LEFT JOIN stations AS s
+  ON s.start_station_name = r.start_station_name
+WHERE r.rn <= 20
+ORDER BY bucket, rank_order;
+```
+
+**Export** the result to CSV as `divvy_top20_coords.csv` with columns:
+```
+bucket,rank_order,start_station_name,start_lat,start_lng
+```
+
+

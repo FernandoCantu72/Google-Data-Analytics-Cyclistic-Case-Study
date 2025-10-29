@@ -1,0 +1,192 @@
+---
+title: "Python_Map"
+author: "Fernando Cantu"
+date: "2025-10-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+---
+
+## 1) Install Python packages
+
+```bash
+pip install pandas folium
+```
+
+---
+
+## 2) Generate the interactive map
+
+Save the following as `build_cyclistic_top20_map.py` (or use the downloadable file in this chat). Then run:
+
+```bash
+python build_cyclistic_top20_map.py
+```
+
+It will:
+- Read `divvy_top20_coords.csv` **if present**; otherwise use the **embedded 40 points**.
+- Plot **Casual = red** and **Member = blue** teardrop markers (with 🚲 icon).
+- Show **station names** on hover.
+- Add a centered **title** (semi‑transparent white, soft shadow), **legend** (top‑right), and transparent labels for **Lake Michigan** & **Chicago, IL**.
+- Save an HTML file you can open and share (`cyclistic_top20_map.html`).
+
+```python
+# build_cyclistic_top20_map.py
+import os
+import pandas as pd
+import folium
+
+# ---- Try to load CSV; if not found, fall back to embedded data ----
+csv_path = "divvy_top20_coords.csv"
+
+embedded = [
+    {"bucket":"casual","rank_order":1,"start_station_name":"DuSable Lake Shore Dr & Monroe St","start_lat":41.8809613463673,"start_lng":-87.6167446630446},
+    {"bucket":"casual","rank_order":2,"start_station_name":"Streeter Dr & Grand Ave","start_lat":41.8922769748721,"start_lng":-87.6120433341403},
+    {"bucket":"casual","rank_order":3,"start_station_name":"Michigan Ave & Oak St","start_lat":41.9009610618444,"start_lng":-87.6237757389998},
+    {"bucket":"casual","rank_order":4,"start_station_name":"Navy Pier","start_lat":41.8922789936724,"start_lng":-87.6120445329965},
+    {"bucket":"casual","rank_order":5,"start_station_name":"Millennium Park","start_lat":41.881033758403,"start_lng":-87.6240839494089},
+    {"bucket":"casual","rank_order":6,"start_station_name":"DuSable Lake Shore Dr & North Blvd","start_lat":41.9117222802107,"start_lng":-87.6268040323354},
+    {"bucket":"casual","rank_order":7,"start_station_name":"Shedd Aquarium","start_lat":41.8672272335087,"start_lng":-87.615362474644},
+    {"bucket":"casual","rank_order":8,"start_station_name":"Dusable Harbor","start_lat":41.8869759239612,"start_lng":-87.6128136772701},
+    {"bucket":"casual","rank_order":9,"start_station_name":"Theater on the Lake","start_lat":41.9262766279904,"start_lng":-87.6308350789469},
+    {"bucket":"casual","rank_order":10,"start_station_name":"Michigan Ave & 8th St","start_lat":41.8727722778662,"start_lng":-87.6239826646527},
+    {"bucket":"casual","rank_order":11,"start_station_name":"Montrose Harbor","start_lat":41.9639816419652,"start_lng":-87.6381810684604},
+    {"bucket":"casual","rank_order":12,"start_station_name":"Adler Planetarium","start_lat":41.8660959849688,"start_lng":-87.6072698491811},
+    {"bucket":"casual","rank_order":13,"start_station_name":"Field Museum","start_lat":41.8653122563906,"start_lng":-87.6178746464632},
+    {"bucket":"casual","rank_order":14,"start_station_name":"Indiana Ave & Roosevelt Rd","start_lat":41.86789028294,"start_lng":-87.6230408434219},
+    {"bucket":"casual","rank_order":15,"start_station_name":"Michigan Ave & Washington St","start_lat":41.883984100465,"start_lng":-87.6246851882928},
+    {"bucket":"casual","rank_order":16,"start_station_name":"Kingsbury St & Kinzie St","start_lat":41.8891801634235,"start_lng":-87.6385086439288},
+    {"bucket":"casual","rank_order":17,"start_station_name":"Wabash Ave & Grand Ave","start_lat":41.8914650860109,"start_lng":-87.6267650286755},
+    {"bucket":"casual","rank_order":18,"start_station_name":"Clark St & Armitage Ave","start_lat":41.918304055028,"start_lng":-87.6362834617089},
+    {"bucket":"casual","rank_order":19,"start_station_name":"Clark St & Elm St","start_lat":41.9030116242921,"start_lng":-87.6315045561044},
+    {"bucket":"casual","rank_order":20,"start_station_name":"Clark St & Lincoln Ave","start_lat":41.9156914626554,"start_lng":-87.6346007583686},
+    {"bucket":"member","rank_order":1,"start_station_name":"Kingsbury St & Kinzie St","start_lat":41.8891801634235,"start_lng":-87.6385086439288},
+    {"bucket":"member","rank_order":2,"start_station_name":"Clinton St & Washington Blvd","start_lat":41.8833999537936,"start_lng":-87.6411838074002},
+    {"bucket":"member","rank_order":3,"start_station_name":"Clinton St & Madison St","start_lat":41.8827375554925,"start_lng":-87.6411961312553},
+    {"bucket":"member","rank_order":4,"start_station_name":"Clark St & Elm St","start_lat":41.9030116242921,"start_lng":-87.6315045561044},
+    {"bucket":"member","rank_order":5,"start_station_name":"Canal St & Madison St","start_lat":41.8824019734109,"start_lng":-87.6397613295833},
+    {"bucket":"member","rank_order":6,"start_station_name":"Wells St & Elm St","start_lat":41.9032166442056,"start_lng":-87.6343401269344},
+    {"bucket":"member","rank_order":7,"start_station_name":"Clinton St & Jackson Blvd","start_lat":41.878322516525,"start_lng":-87.6409896921098},
+    {"bucket":"member","rank_order":8,"start_station_name":"State St & Chicago Ave","start_lat":41.8966164606786,"start_lng":-87.6285899643723},
+    {"bucket":"member","rank_order":9,"start_station_name":"Wells St & Concord Ln","start_lat":41.9121264497188,"start_lng":-87.634659951284},
+    {"bucket":"member","rank_order":10,"start_station_name":"University Ave & 57th St","start_lat":41.7914780065617,"start_lng":-87.5998621355164},
+    {"bucket":"member","rank_order":11,"start_station_name":"Wells St & Huron St","start_lat":41.8947627809193,"start_lng":-87.6343820739586},
+    {"bucket":"member","rank_order":12,"start_station_name":"Canal St & Adams St","start_lat":41.8792557174539,"start_lng":-87.6399078155894},
+    {"bucket":"member","rank_order":13,"start_station_name":"Larrabee St & Kingsbury St","start_lat":41.8977608496285,"start_lng":-87.64288914927},
+    {"bucket":"member","rank_order":14,"start_station_name":"Daley Center Plaza","start_lat":41.8842383646358,"start_lng":-87.6296324164991},
+    {"bucket":"member","rank_order":15,"start_station_name":"Dearborn St & Erie St","start_lat":41.8940032412599,"start_lng":-87.6293244660406},
+    {"bucket":"member","rank_order":16,"start_station_name":"Desplaines St & Kinzie St","start_lat":41.8887120125967,"start_lng":-87.6444496432978},
+    {"bucket":"member","rank_order":17,"start_station_name":"Orleans St & Merchandise Mart Plaza","start_lat":41.8882365438245,"start_lng":-87.6364066131112},
+    {"bucket":"member","rank_order":18,"start_station_name":"Wells St & Hubbard St","start_lat":41.8899215593623,"start_lng":-87.6342782381407},
+    {"bucket":"member","rank_order":19,"start_station_name":"Ellis Ave & 60th St","start_lat":41.7850986159824,"start_lng":-87.6010736993523},
+    {"bucket":"member","rank_order":20,"start_station_name":"Kingsbury St & Erie St","start_lat":41.8939914556441,"start_lng":-87.6417336416958},
+]
+
+if os.path.exists(csv_path):
+    df = pd.read_csv(csv_path)
+else:
+    df = pd.DataFrame(embedded)
+
+# Normalize & validate
+df["bucket"] = df["bucket"].str.lower().str.strip()
+df = df.dropna(subset=["start_lat","start_lng"])
+
+# ---- Base map over Chicago ----
+m = folium.Map(location=[41.881, -87.629], zoom_start=12, tiles="OpenStreetMap")
+
+# Feature groups
+fg_casual = folium.FeatureGroup(name="Casual Riders (Red)", show=True)
+fg_member = folium.FeatureGroup(name="Annual Members (Blue)", show=True)
+
+# Teardrop markers via AwesomeMarkers (folium.Icon with FontAwesome)
+def icon_for(bucket):
+    if bucket == "casual":
+        return folium.Icon(color="red", icon="bicycle", prefix="fa")
+    else:
+        return folium.Icon(color="blue", icon="bicycle", prefix="fa")
+
+# Add markers + bounds
+bounds = []
+for _, r in df.iterrows():
+    grp = fg_casual if r["bucket"] == "casual" else fg_member
+    label = r["start_station_name"]
+    folium.Marker(
+        location=[r["start_lat"], r["start_lng"]],
+        icon=icon_for(r["bucket"]),
+        tooltip=label,
+    ).add_to(grp)
+    bounds.append((r["start_lat"], r["start_lng"]))
+
+fg_casual.add_to(m)
+fg_member.add_to(m)
+
+# Layer control
+folium.LayerControl(collapsed=False).add_to(m)
+
+# Title (semi-transparent white) + Labels (transparent)
+style = """
+<style>
+.map-title {
+  position: fixed; top: 8px; left: 50%; transform: translateX(-50%);
+  z-index: 9999; background: rgba(255,255,255,0.9);
+  padding: 6px 12px; border-radius: 8px;
+  font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; color: #1a1a1a;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+.legend {
+  position: fixed; top: 10px; right: 10px; z-index: 9999;
+  background: rgba(255,255,255,0.9); padding: 6px 10px; border-radius: 6px;
+  font-family: Arial, sans-serif; font-size: 12px; color: #333; box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.legend .swatch {
+  display:inline-block; width:12px; height:18px; margin-right:6px; vertical-align:middle;
+  clip-path: path('M6 0 C10 0,12 2,12 6 C12 10,6 18,6 18 C6 18,0 10,0 6 C0 2,2 0,6 0 Z');
+}
+.legend .red { background:#d62728; }
+.legend .blue { background:#1f77b4; }
+.city-label {
+  position: fixed; bottom: 18px; left: 16px; z-index: 9999;
+  font-family: Arial, sans-serif; font-weight: 700; font-size: 14px;
+  color: #222; background: transparent; text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+  pointer-events: none;
+}
+.lake-label {
+  position: fixed; top: 180px; right: 140px; z-index: 9999;
+  font-family: "Georgia", serif; font-style: italic; font-size: 20px;
+  color: rgba(0, 102, 204, 0.8); background: transparent;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
+  pointer-events: none;
+}
+</style>
+<div class="map-title">Cyclistic Top 20 Stations — Chicago (10/2024–09/2025)</div>
+<div class="legend"><span class="swatch red"></span> Casual &nbsp;&nbsp; <span class="swatch blue"></span> Member</div>
+<div class="city-label">Chicago, IL</div>
+<div class="lake-label">Lake Michigan</div>
+"""
+m.get_root().html.add_child(folium.Element(style))
+
+# Fit bounds
+if bounds:
+    m.fit_bounds(bounds, padding=(20,20))
+
+# Output
+out_html = "cyclistic_top20_map.html"
+m.save(out_html)
+print(f"✅ Map saved as {out_html}")
+
+```
+
+---
+
+## 3) Open or Share
+- Open the generated `cyclistic_top20_map.html` in your browser.
+- It’s fully self-contained; you can email or host it.
+
+**Legend**: Red = Casual Riders, Blue = Annual Members.  
+**Labels**: “Lake Michigan” and “Chicago, IL” are always visible with transparent backgrounds.
