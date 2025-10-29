@@ -34,7 +34,7 @@ The twelve files downloaded were: <br>
 >&nbsp;&nbsp;&nbsp;&nbsp;[Rides by day of week](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/Cyclistic_Rides_by_Weekday_markdown.html)<br>
 
 >•	MS SQL and Python were used to create a map. <br>
->&nbsp;&nbsp;&nbsp;&nbsp; o	Query was run in MS SQL to identify the top twenty stations used by Members and the top twenty stations used by Casual riders: &nbsp;&nbsp;&nbsp;&nbsp;[SQL Query](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/SQL_Top_20_Stations.html)<br>
+>&nbsp;&nbsp;&nbsp;&nbsp; o	An MS SQL query identified the top 20 stations most used by Members and Casual Riders: &nbsp;&nbsp;&nbsp;&nbsp;[SQL Query](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/SQL_Top_20_Stations.html)<br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	[Python code](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/PythonMap_Top_20_Stations.html) was used to generate a map that plots the findings:  &nbsp;&nbsp;&nbsp;&nbsp;[Python Map](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/divvy_top20_openstreetmap_lake_shore.html)
 
 ### 5.	(Share) Supporting visualizations and key findings  
