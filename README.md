@@ -18,11 +18,13 @@ The twelve files downloaded were: <br>
     &nbsp;&nbsp;&nbsp;&nbsp;202507-divvy-tripdata.zip  &nbsp;&nbsp;&nbsp;&nbsp;202508-divvy-tripdata.zip  &nbsp;&nbsp;&nbsp;&nbsp;202509-divvy-tripdata.zip <br>
 
 [Note that the data has been made available by Motivate International Inc. under this [<ins>license</ins>](https://www.divvybikes.com/data-license-agreement).]
-### 3.	(Process) Documentation of any cleaning or manipulation of data 
+### 3.	(Process) Documentation of any cleaning or manipulation of data <br>
 >•	Data was downloaded, manipulated, and cleaned using Microsoft Excel.<br>
+
 >&nbsp;&nbsp;&nbsp;&nbsp;o	Calculations were performed to add two columns—ride_length and day_of_week—to the datasets: &nbsp;&nbsp;[csv file](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/202411-divvy-tripdata-csv.png)<br>
 >&nbsp;&nbsp;&nbsp;&nbsp;o	Only one file, 202411-divvy-tripdata.zip, contained corrupt data, and 43 records were removed: &nbsp;&nbsp;[error file](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/202411-divvy-tripdata-error-file.png)<br>
->•	 A created database named Cycling using Microsoft SQL Serve.;<br>
+>•	 A database named Cycling was created using Microsoft SQL Serve.;<br>
+
 >•	 Files were uploaded to Microsoft SQL Server and combined into the dbo.tripdata table with a total of 5,539,478 records.&nbsp;&nbsp;[SQL Code](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/Create_BulkInsert_tripdata_table.sql
 )<br>
 ### 4.	(Analyze) A summary of analysis  
