@@ -25,8 +25,8 @@ The twelve files downloaded were: <br>
 >&nbsp;&nbsp;&nbsp;&nbsp;o	Only one file, 202411-divvy-tripdata.zip, contained corrupt data, and 43 records were removed: &nbsp;&nbsp;[error file](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/202411-divvy-tripdata-error-file.png)<br>
 
 >•	 A database named Cycling was created using Microsoft SQL Serve.<br>
->&nbsp;&nbsp;&nbsp;&nbsp;o Twelve csv files were combined into the dbo.tripdata table, totaling 5,539,478 records.&nbsp;&nbsp;[SQL Query](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/Create_BulkInsert_tripdata_table.sql
-)<br>
+>&nbsp;&nbsp;&nbsp;&nbsp;o Twelve csv files were combined into the [dbo.tripdata](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/Create_BulkInsert_tripdata_table.sql
+) table, totaling 5,539,478 records.<br>
 
 ### 4.	(Analyze) A summary of analysis  
 >•	R Studio was used to establishing a link between SQL server and R, query SQL, analyse data, and create graphs. <br>
