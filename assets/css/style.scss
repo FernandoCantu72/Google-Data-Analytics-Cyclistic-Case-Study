@@ -1,29 +1,18 @@
 ---
-# Add this YAML front matter or it won’t compile!
-@import "{{ site.theme }}";
 ---
-/* Reduce logo size by ~70% */
-img[alt="Logo"] {
-  width: 15%;        /* makes it 70% smaller than original */
+@import "{{ site.theme }}";
+
+/* Make the header left-aligned (overrides the theme's centering) */
+.page-header {
+  text-align: left !important;
+  padding-left: 10px; /* optional breathing room */
+}
+
+/* Reduce logo size and align it left */
+.page-header img[alt="Logo"] {
+  width: 15%;      /* ~85% smaller than original; tweak as needed */
   height: auto;
-  border-radius: 10px; /* optional: soft corners */
-  display: block;
-  margin-left: 0;
-  margin-right: auto;
-}
-/* Example: adjust the content vs sidebar width */
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-
-/* Sidebar (logo/title area) */
-header {
-  flex: 0 0 10%;   /* 20% of the width */
-  text-align: left;
-}
-
-/* Main content area */
-section {
-  flex: 0 0 50%;   /* 80% of the width */
+  display: inline-block;
+  margin: 0;       /* no auto-centering */
+  vertical-align: middle;
 }
