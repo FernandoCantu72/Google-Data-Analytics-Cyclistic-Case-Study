@@ -21,25 +21,25 @@ The twelve files downloaded were: <br>
 
 ### 3.	(Process) Documentation of any cleaning or manipulation of data <br>
 >•	Data was downloaded, manipulated, and cleaned using Microsoft Excel.<br>
->&nbsp;&nbsp;&nbsp;&nbsp;o	Calculations were performed to add two columns—ride_length and day_of_week—to the datasets: &nbsp;&nbsp;[csv file](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/202411-divvy-tripdata-csv.png)<br>
->&nbsp;&nbsp;&nbsp;&nbsp;o	Only one file, 202411-divvy-tripdata.zip, contained [corrupt data](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/202411-divvy-tripdata-error-file.png), and 43 records were removed: <br>
+>&nbsp;&nbsp;&nbsp;&nbsp;o	Calculations were performed to add two columns—ride_length and day_of_week—to the datasets: &nbsp;&nbsp;[csv file](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/assets/202411-divvy-tripdata-csv.png)<br>
+>&nbsp;&nbsp;&nbsp;&nbsp;o	Only one file, 202411-divvy-tripdata.zip, contained [corrupt data](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/assets/202411-divvy-tripdata-error-file.png), and 43 records were removed: <br>
 
 >•	 A database named Cycling was created using Microsoft SQL Serve.<br>
->&nbsp;&nbsp;&nbsp;&nbsp;o Twelve csv files were combined into the [dbo.tripdata](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/Create_BulkInsert_tripdata_table.sql
+>&nbsp;&nbsp;&nbsp;&nbsp;o Twelve csv files were combined into the [dbo.tripdata](https://github.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/blob/main/assets/Create_BulkInsert_tripdata_table.sql
 ) table, totaling 5,539,478 records.<br>
 
 ### 4.	(Analyze) A summary of analysis  
 >•	R Studio was used to establishing a link between SQL server and R, query SQL, analyse data, and create graphs. <br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	Queries were run to identify the bike preference of both casual riders and annual members.<br>
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A knitted mark down file showing steps and results can be accessed here:
->&nbsp;&nbsp;&nbsp;&nbsp;[Rider bike preference](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/Rider_Preferences_SideBySide.html)<br>
+>&nbsp;&nbsp;&nbsp;&nbsp;[Rider bike preference](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/assets/Rider_Preferences_SideBySide.html)<br>
 >&nbsp;&nbsp;&nbsp;&nbsp; o	Queries were run to identify the different usage by rider type and by day of the week.<br>
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A knitted mark down file showing steps and results can be accessed here:
->&nbsp;&nbsp;&nbsp;&nbsp;[Rides by day of week](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/Cyclistic_Rides_by_Weekday_markdown.html)<br>
+>&nbsp;&nbsp;&nbsp;&nbsp;[Rides by day of week](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/assets/Cyclistic_Rides_by_Weekday_markdown.html)<br>
 
 >•	MS SQL and Python were used to create a map. <br>
->&nbsp;&nbsp;&nbsp;&nbsp; o	A [SQL query](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/SQL_Top_20_Stations.html) identified the top 20 stations most used by Members and Casual Riders: <br>
->&nbsp;&nbsp;&nbsp;&nbsp; o	[Python code](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/PythonMap_Top_20_Stations.html) was used to generate a map that plots the findings:  &nbsp;&nbsp;[Python Map](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/divvy_top20_openstreetmap_lake_shore.html)
+>&nbsp;&nbsp;&nbsp;&nbsp; o	A [SQL query](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/assets/SQL_Top_20_Stations.html) identified the top 20 stations most used by Members and Casual Riders: <br>
+>&nbsp;&nbsp;&nbsp;&nbsp; o	[Python code](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/assets/PythonMap_Top_20_Stations.html) was used to generate a map that plots the findings:  &nbsp;&nbsp;[Python Map](https://raw.githack.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/refs/heads/main/assets/divvy_top20_openstreetmap_lake_shore.html)
 
 ### 5.	(Share) Supporting visualizations and key findings  
 >•	To visualize the findings, an ESRI Story Map was used to showcase the results: [<ins>Case Study</ins>](https://arcg.is/1mH4KW0)
