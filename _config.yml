@@ -1,7 +1,5 @@
-title: Google Data Analytics Capstone Project 
-logo: https://raw.githubusercontent.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/main/assets/Cyclistic%20Logo%20Design%202016.png
-description: Cyclistic Case Study
+title: Cyclistic Case Study
+description: Google Data Analytics Capstone Project
 theme: jekyll-theme-minimal
+logo: https://raw.githubusercontent.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/main/assets/Cyclistic%20Logo%20Design%202016.png
 show_downloads: false
-include:
-  - assets/css/style.scss
