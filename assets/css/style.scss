@@ -2,17 +2,46 @@
 ---
 @import "{{ site.theme }}";
 
-/* Make the header left-aligned (overrides the theme's centering) */
+/* ==============
+   Header styling
+   ============== */
 .page-header {
   text-align: left !important;
-  padding-left: 10px; /* optional breathing room */
+  padding-left: 10px;
 }
 
-/* Reduce logo size and align it left */
+/* Logo resizing and alignment */
 .page-header img[alt="Logo"] {
-  width: 15%;      /* ~85% smaller than original; tweak as needed */
+  width: 15%;
   height: auto;
   display: inline-block;
-  margin: 0;       /* no auto-centering */
+  margin: 0;
   vertical-align: middle;
+}
+
+/* Title next to logo */
+.page-header h1, .page-header h2 {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* =====================
+   Layout width override
+   ===================== */
+
+/* Expand main body area by 10% */
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Sidebar (logo/title area) */
+header {
+  flex: 0 0 18%;   /* slightly smaller (was 20%) */
+}
+
+/* Main content area */
+section {
+  flex: 0 0 82%;   /* slightly wider (was 80%) */
 }
