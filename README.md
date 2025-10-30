@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/main/assets/Cyclistic%20Logo%20Design%202016.png" alt="Cyclistic Logo" width="120">
+</p>
 # 📊Cyclistic Case Study Data Analysis
 ## 👋Introduction
 Cyclistic is a fictional bike-share company and dataset created for the capstone project in the Google Data Analytics course on Coursera.
