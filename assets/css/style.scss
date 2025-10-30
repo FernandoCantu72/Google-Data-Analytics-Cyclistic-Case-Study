@@ -1,25 +1,12 @@
 ---
-# This front matter tells Jekyll to process SCSS
+# Add this YAML front matter or it won’t compile!
 @import "{{ site.theme }}";
 ---
 
-/* ===========================
-   Custom overrides for layout
-   =========================== */
-
-/* Example: adjust the content vs sidebar width */
-.wrapper {
-  display: flex;
-  justify-content: space-between;
+/* Your overrides go below */
+.sidebar {
+  flex: 0 0 20%; /* make sidebar 20% width */
 }
-
-/* Sidebar (logo/title area) */
-header {
-  flex: 0 0 20%;   /* 20% of the width */
-  text-align: left;
-}
-
-/* Main content area */
-section {
-  flex: 0 0 80%;   /* 80% of the width */
+.main {
+  flex: 0 0 80%; /* main content 80% */
 }
