@@ -1,0 +1,24 @@
+---
+---
+@import "{{ site.theme }}";
+
+/* ==============================
+   Override Dinky link colors
+   ============================== */
+
+/* Normal link color (blue) */
+a, a:visited {
+  color: #007bff !important;   /* or use #1a0dab for Google-blue */
+  text-decoration: none;
+}
+
+/* Hover / focus color (slightly darker blue) */
+a:hover, a:focus {
+  color: #0056b3 !important;
+  text-decoration: underline;
+}
+
+/* Optional: emphasize links in lists or headings */
+li a, h2 a, h3 a {
+  color: #0066cc !important;
+}
