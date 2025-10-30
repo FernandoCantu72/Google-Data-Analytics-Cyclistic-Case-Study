@@ -2,12 +2,59 @@
 ---
 @import "{{ site.theme }}";
 
-/* Flex two-column layout */
-body {
-  display: flex;
+/* Make the site wider so two columns have room */
+.wrapper {
+  max-width: 1200px !important;   /* was ~800px */
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex !important;        /* side-by-side layout */
+  align-items: flex-start;
   gap: 24px;
-  margin: 0;
 }
 
-.page-header { flex: 0 0 10%; text-align: left !important; padding: 16px 10px !important; background: none !important; border: 0 !important; }
-.main-content { flex: 1 1 90%; padding-top: 16px; max-width: 100%; }
+/* Left column: header (logo + title) */
+.page-header {
+  flex: 0 0 18% !important;        /* adjust to 20% if you prefer */
+  max-width: 18% !important;
+  text-align: left !important;
+  padding: 16px 10px !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  align-self: flex-start;
+}
+
+/* Right column: main content */
+.main-content {
+  flex: 1 1 82% !important;
+  max-width: 82% !important;
+  padding-top: 16px;
+  min-width: 0;                    /* prevents overflow issues */
+}
+
+/* Logo size/alignment */
+.page-header img[alt="Logo"] {
+  width: 100px;    /* tweak as needed */
+  height: auto;
+  display: block;
+  margin: 0 0 8px 0;
+}
+
+/* Keep long content responsive */
+.main-content img, .main-content table {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Stack on smaller screens */
+@media (max-width: 900px) {
+  .wrapper {
+    display: block !important;
+    max-width: 100% !important;
+  }
+  .page-header, .main-content {
+    max-width: 100% !important;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
