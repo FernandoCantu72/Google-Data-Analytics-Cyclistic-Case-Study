@@ -2,3 +2,6 @@ title: Google Data Analytics Capstone Project
 description: Cyclistic Case Study
 theme: jekyll-theme-dinky
 show_downloads: false
+
+include:
+  - assets/css/style.scss
