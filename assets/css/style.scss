@@ -2,46 +2,63 @@
 ---
 @import "{{ site.theme }}";
 
-/* ==============
-   Header styling
-   ============== */
-.page-header {
-  text-align: left !important;
-  padding-left: 10px;
-}
-
-/* Logo resizing and alignment */
-.page-header img[alt="Logo"] {
-  width: 15%;
-  height: auto;
-  display: inline-block;
-  margin: 0;
-  vertical-align: middle;
-}
-
-/* Title next to logo */
-.page-header h1, .page-header h2 {
-  display: inline-block;
-  margin-left: 10px;
-  vertical-align: middle;
-}
-
 /* =====================
-   Layout width override
+   Page layout overrides
    ===================== */
 
-/* Expand main body area by 10% */
+/* Wrap the header and main content side by side */
 .wrapper {
   display: flex;
-  justify-content: space-between;
+  align-items: flex-start;   /* top alignment */
+  justify-content: flex-start;
+  gap: 30px;                 /* space between header and section */
+  padding: 0 20px;
 }
 
-/* Sidebar (logo/title area) */
-header {
-  flex: 0 0 18%;   /* slightly smaller (was 20%) */
+/* Sidebar (header area with logo/title) */
+.page-header {
+  flex: 0 0 20%;             /* sidebar takes 20% width */
+  text-align: left !important;
+  padding-top: 20px;
 }
 
-/* Main content area */
+/* Body content */
 section {
-  flex: 0 0 82%;   /* slightly wider (was 80%) */
+  flex: 1;                   /* take remaining width (≈80%) */
+  max-width: 80%;
+}
+
+/* ===========================
+   Header content adjustments
+   =========================== */
+
+/* Logo */
+.page-header img[alt="Logo"] {
+  width: 100px;              /* adjust logo size here */
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Title below logo (or beside if inline) */
+.page-header h1 {
+  margin-top: 5px;
+  font-size: 1.6em;
+}
+
+/* Responsive: stack vertically on narrow screens */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-header, section {
+    flex: none;
+    max-width: 100%;
+  }
+
+  .page-header img[alt="Logo"] {
+    width: 80px;
+  }
 }
