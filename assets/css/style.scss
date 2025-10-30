@@ -2,63 +2,56 @@
 ---
 @import "{{ site.theme }}";
 
-/* =====================
-   Page layout overrides
-   ===================== */
-
-/* Wrap the header and main content side by side */
-.wrapper {
-  display: flex;
-  align-items: flex-start;   /* top alignment */
-  justify-content: flex-start;
-  gap: 30px;                 /* space between header and section */
-  padding: 0 20px;
+/* Put header (left) and content (right) side-by-side */
+body {
+  display: grid;
+  grid-template-columns: 20% 1fr;          /* ~20/80 split */
+  grid-template-areas: "sidebar content";
+  column-gap: 24px;
+  margin: 0; /* keep theme spacing clean */
 }
 
-/* Sidebar (header area with logo/title) */
+/* Left column: header/logo/title */
 .page-header {
-  flex: 0 0 20%;             /* sidebar takes 20% width */
+  grid-area: sidebar;
   text-align: left !important;
-  padding-top: 20px;
+  padding: 16px 10px !important;          /* tighter padding */
+  background: none !important;            /* remove large header bg */
+  border: 0 !important;
+  align-self: start;                       /* stick to top of column */
 }
 
-/* Body content */
-section {
-  flex: 1;                   /* take remaining width (≈80%) */
-  max-width: 80%;
+/* Right column: main body */
+.main-content {
+  grid-area: content;
+  padding-top: 16px;                       /* align visually with header */
 }
 
-/* ===========================
-   Header content adjustments
-   =========================== */
-
-/* Logo */
+/* Logo sizing/placement */
 .page-header img[alt="Logo"] {
-  width: 100px;              /* adjust logo size here */
+  width: 100px;                            /* tweak as you like */
   height: auto;
-  margin-bottom: 10px;
   display: block;
+  margin: 0 0 8px 0;                       /* left-aligned */
 }
 
-/* Title below logo (or beside if inline) */
-.page-header h1 {
-  margin-top: 5px;
-  font-size: 1.6em;
+/* Keep title nice next to/below logo */
+.page-header h1, .page-header h2 {
+  margin: 6px 0 0 0;
 }
 
-/* Responsive: stack vertically on narrow screens */
-@media screen and (max-width: 768px) {
-  .wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
+/* Make sure wide images/tables don’t break the layout */
+.main-content img, .main-content table {
+  max-width: 100%;
+}
 
-  .page-header, section {
-    flex: none;
-    max-width: 100%;
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  body {
+    display: block;                        /* revert to stacked */
   }
-
-  .page-header img[alt="Logo"] {
-    width: 80px;
+  .page-header, .main-content {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
