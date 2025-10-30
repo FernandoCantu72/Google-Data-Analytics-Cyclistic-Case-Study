@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/main/assets/Cyclistic%20Logo%20Design%202016.png" alt="Cyclistic Logo" width="120">
+  <img src="https://raw.githubusercontent.com/FernandoCantu72/Google-Data-Analytics-Cyclistic-Case-Study/main/assets/Cyclistic%20Logo%20Design%202016.png" alt="Cyclistic Logo" width="180">
 </p>
 # 📊Cyclistic Case Study Data Analysis
 ## 👋Introduction
