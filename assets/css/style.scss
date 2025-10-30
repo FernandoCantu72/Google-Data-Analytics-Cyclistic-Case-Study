@@ -1,15 +1,25 @@
-/* assets/css/style.scss */
 ---
+# This front matter tells Jekyll to process SCSS
 @import "{{ site.theme }}";
 ---
 
-/* override container/cols */
-.main-wrapper {
+/* ===========================
+   Custom overrides for layout
+   =========================== */
+
+/* Example: adjust the content vs sidebar width */
+.wrapper {
   display: flex;
+  justify-content: space-between;
 }
-.sidebar {
-  flex: 0 0 20%; /* width 20% */
+
+/* Sidebar (logo/title area) */
+header {
+  flex: 0 0 20%;   /* 20% of the width */
+  text-align: left;
 }
-.content {
-  flex: 0 0 80%; /* width 80% */
+
+/* Main content area */
+section {
+  flex: 0 0 80%;   /* 80% of the width */
 }
