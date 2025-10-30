@@ -2,7 +2,15 @@
 # Add this YAML front matter or it won’t compile!
 @import "{{ site.theme }}";
 ---
-
+/* Reduce logo size by ~70% */
+img[alt="Logo"] {
+  width: 30%;        /* makes it 70% smaller than original */
+  height: auto;
+  border-radius: 10px; /* optional: soft corners */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* Your overrides go below */
 .sidebar {
   flex: 0 0 20%; /* make sidebar 20% width */
