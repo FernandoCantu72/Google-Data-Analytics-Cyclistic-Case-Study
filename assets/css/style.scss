@@ -23,26 +23,32 @@ li a, h2 a, h3 a {
   color: #0066cc !important;
 }
 /* =========================================
-   Force "View on GitHub" button to be blue
+   Force "View on GitHub" button colors
    ========================================= */
 
-.btn, a.btn {
-  background: none !important;              /* remove Dinky gradient */
-  background-color: #007bff !important;     /* Cyclistic blue */
-  color: #ffffff !important;                /* white text */
+.btn,
+a.btn,
+a.btn:link,
+a.btn:visited,
+a.btn:hover,
+a.btn:focus,
+a.btn:active {
+  background: none !important;               /* remove gradient */
+  background-color: #007bff !important;      /* blue background */
+  color: #ffffff !important;                 /* white text */
   border: none !important;
-  border-radius: 6px;
-  padding: 8px 16px;
+  border-radius: 6px !important;
+  padding: 8px 16px !important;
+  font-weight: 600 !important;
   text-decoration: none !important;
-  font-weight: 600;
-  text-shadow: none !important;             /* remove Dinky text glow */
-  box-shadow: none !important;              /* remove glossy effect */
-  transition: background-color 0.2s ease;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transition: background-color 0.25s ease !important;
 }
 
-/* Hover and focus state */
-.btn:hover, a.btn:hover,
-.btn:focus, a.btn:focus {
-  background-color: #0056b3 !important;     /* darker blue hover */
+/* Hover color (darker blue) */
+a.btn:hover,
+a.btn:focus {
+  background-color: #0056b3 !important;
   color: #ffffff !important;
 }
