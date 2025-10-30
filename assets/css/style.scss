@@ -23,22 +23,26 @@ li a, h2 a, h3 a {
   color: #0066cc !important;
 }
 /* =========================================
-   Style the "View on GitHub" button (Dinky)
+   Force "View on GitHub" button to be blue
    ========================================= */
 
 .btn, a.btn {
-  background-color: #007bff !important; /* Cyclistic blue */
-  color: #ffffff !important;            /* white text */
+  background: none !important;              /* remove Dinky gradient */
+  background-color: #007bff !important;     /* Cyclistic blue */
+  color: #ffffff !important;                /* white text */
   border: none !important;
-  padding: 8px 16px;
   border-radius: 6px;
-  text-decoration: none;
+  padding: 8px 16px;
+  text-decoration: none !important;
   font-weight: 600;
+  text-shadow: none !important;             /* remove Dinky text glow */
+  box-shadow: none !important;              /* remove glossy effect */
   transition: background-color 0.2s ease;
 }
 
-/* Hover effect */
-.btn:hover, a.btn:hover {
-  background-color: #0056b3 !important; /* darker blue on hover */
+/* Hover and focus state */
+.btn:hover, a.btn:hover,
+.btn:focus, a.btn:focus {
+  background-color: #0056b3 !important;     /* darker blue hover */
   color: #ffffff !important;
 }
