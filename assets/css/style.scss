@@ -1,0 +1,15 @@
+/* assets/css/style.scss */
+---
+@import "{{ site.theme }}";
+---
+
+/* override container/cols */
+.main-wrapper {
+  display: flex;
+}
+.sidebar {
+  flex: 0 0 20%; /* width 20% */
+}
+.content {
+  flex: 0 0 80%; /* width 80% */
+}
