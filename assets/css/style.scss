@@ -22,33 +22,3 @@ a:hover, a:focus {
 li a, h2 a, h3 a {
   color: #0066cc !important;
 }
-/* =========================================
-   Restyle "View on GitHub" button to white
-   ========================================= */
-
-.btn,
-a.btn,
-a.btn:link,
-a.btn:visited,
-a.btn:hover,
-a.btn:focus,
-a.btn:active {
-  background: none !important;
-  background-color: #ffffff !important;  /* white button */
-  color: #007bff !important;             /* Cyclistic blue text */
-  border: 2px solid #007bff !important;  /* blue outline */
-  border-radius: 6px !important;
-  padding: 8px 16px !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-  transition: all 0.25s ease !important;
-}
-
-/* Hover/focus state: invert colors (blue background, white text) */
-a.btn:hover,
-a.btn:focus {
-  background-color: #007bff !important;
-  color: #ffffff !important;
-}
