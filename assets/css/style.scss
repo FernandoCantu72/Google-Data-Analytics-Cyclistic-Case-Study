@@ -11,10 +11,19 @@ img[alt="Logo"] {
   margin-left: auto;
   margin-right: auto;
 }
-/* Your overrides go below */
-.sidebar {
-  flex: 0 0 20%; /* make sidebar 20% width */
+/* Example: adjust the content vs sidebar width */
+.wrapper {
+  display: flex;
+  justify-content: space-between;
 }
-.main {
-  flex: 0 0 80%; /* main content 80% */
+
+/* Sidebar (logo/title area) */
+header {
+  flex: 0 0 10%;   /* 20% of the width */
+  text-align: left;
+}
+
+/* Main content area */
+section {
+  flex: 0 0 50%;   /* 80% of the width */
 }
