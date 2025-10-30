@@ -2,59 +2,60 @@
 ---
 @import "{{ site.theme }}";
 
-/* Make the site wider so two columns have room */
-.wrapper {
-  max-width: 1200px !important;   /* was ~800px */
-  padding: 0 20px;
-  margin: 0 auto;
-  display: flex !important;        /* side-by-side layout */
-  align-items: flex-start;
-  gap: 24px;
+/* 1) Reset theme assumptions so nothing overlays */
+.page-header, .main-content {
+  position: static !important;
+  float: none !important;
+  width: auto !important;
+  max-width: none !important;
+  box-shadow: none !important;
 }
 
-/* Left column: header (logo + title) */
+/* Kill the big banner look so it behaves like a sidebar */
 .page-header {
-  flex: 0 0 18% !important;        /* adjust to 20% if you prefer */
-  max-width: 18% !important;
-  text-align: left !important;
-  padding: 16px 10px !important;
   background: none !important;
   border: 0 !important;
-  box-shadow: none !important;
-  align-self: flex-start;
+  padding: 16px 12px !important;
+  text-align: left !important;
 }
 
-/* Right column: main content */
-.main-content {
-  flex: 1 1 82% !important;
-  max-width: 82% !important;
-  padding-top: 16px;
-  min-width: 0;                    /* prevents overflow issues */
+/* 2) Two-column layout using GRID on the wrapper */
+.wrapper {
+  max-width: 1200px !important;       /* give it room */
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid !important;
+  grid-template-columns: 20% 80%;      /* adjust to 18/82 if you like */
+  grid-auto-rows: min-content;
+  column-gap: 24px;
 }
 
-/* Logo size/alignment */
+/* Place header in left column, content in right */
+.page-header { grid-column: 1; grid-row: 1; align-self: start; }
+.main-content { grid-column: 2; grid-row: 1; min-width: 0; padding-top: 16px; }
+
+/* 3) Logo sizing/alignment */
 .page-header img[alt="Logo"] {
   width: 100px;    /* tweak as needed */
   height: auto;
   display: block;
-  margin: 0 0 8px 0;
+  margin: 0 0 8px 0;   /* left aligned */
 }
 
-/* Keep long content responsive */
-.main-content img, .main-content table {
-  max-width: 100%;
-  height: auto;
-}
+/* Title spacing */
+.page-header h1, .page-header h2 { margin: 6px 0 0 0; }
 
-/* Stack on smaller screens */
+/* Keep wide content responsive */
+.main-content img, .main-content table { max-width: 100%; height: auto; }
+
+/* 4) Mobile: stack vertically */
 @media (max-width: 900px) {
   .wrapper {
     display: block !important;
     max-width: 100% !important;
   }
   .page-header, .main-content {
-    max-width: 100% !important;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 }
